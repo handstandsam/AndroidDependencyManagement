@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidDependencyManagement</string>
+    <string name="github_url">https://github.com/handstandsam/AndroidDependencyManagement</string>
+    <string name="open_on_github">Open Project\non Github</string>
+</resources>
