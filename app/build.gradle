@@ -3,13 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion Versions.compile_sdk
     defaultConfig {
         applicationId "com.handstandsam.androiddependencymanagement"
-        minSdkVersion 21
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion Versions.min_sdk
+        targetSdkVersion Versions.target_sdk
+        versionCode Versions.version_code
+        versionName Versions.version_name
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -22,11 +22,11 @@ android {
 dependencies {
     implementation project(":module_a")
     implementation project(":module_b")
-    implementation "com.android.support:appcompat-v7:26.1.0"
-    implementation "com.android.support:support-v4:26.1.0"
-    implementation "com.android.support:design:26.1.0"
-    implementation "com.android.support:recyclerview-v7:26.1.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.21"
+    implementation Deps.app_compat_v7
+    implementation Deps.support_v4
+    implementation Deps.design
+    implementation Deps.recyclerview_v7
+    implementation Deps.kotlin_stdlib
 }
 repositories {
     mavenCentral()
