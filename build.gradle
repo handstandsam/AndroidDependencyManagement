@@ -1,13 +1,42 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+
+    ext.versions = [
+            "kotlin"      : "1.2.21",
+            "support_lib" : "26.1.0",
+            "retrofit"    : "2.3.0",
+            "rxjava"      : "2.1.9",
+            "min_sdk"     : 21,
+            "target_sdk"  : 26,
+            "compile_sdk" : 26,
+            "version_code": 1,
+            "version_name": "1.0"
+    ]
+
+    ext.deps = [
+            "kotlin_gradle_plugin": "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+            "kotlin_stdlib"       : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+
+            //Support Library
+            "app_compat_v7"       : "com.android.support:appcompat-v7:${versions.support_lib}",
+            "support_v4"          : "com.android.support:support-v4:${versions.support_lib}",
+            "design"              : "com.android.support:design:${versions.support_lib}",
+            "recyclerview_v7"     : "com.android.support:recyclerview-v7:${versions.support_lib}",
+
+
+            "retrofit"            : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+            "retrofit_rxjava"     : "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
+            "rxjava"              : "io.reactivex.rxjava2:rxjava:${versions.rxjava}"
+    ]
+
     repositories {
         google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.21"
+        classpath deps.kotlin_gradle_plugin
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
